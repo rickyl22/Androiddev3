@@ -17,7 +17,7 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity {
 
     private AppDatabase mDb;
-
+    private int idCounter;
     private EditText mName;
     private EditText mNumber;
 
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-
+        idCounter = 0;
         mName = findViewById(R.id.student_name);
         mNumber = findViewById(R.id.student_number);
 
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         View.OnClickListener ins = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDb.userModel().insertUser(new Student(((EditText) findViewById(R.id.student_name)).getText().toString(),Integer.parseInt(((EditText) findViewById(R.id.student_number)).getText().toString())));
+                mDb.userModel().insertUser(new Student(idCounter++,((EditText) findViewById(R.id.student_name)).getText().toString(),Integer.parseInt(((EditText) findViewById(R.id.student_number)).getText().toString())));
             }
         };
         insert.setOnClickListener(ins);

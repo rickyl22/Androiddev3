@@ -43,8 +43,8 @@ public class DatabaseInitializer {
         return book;
     }*/
 
-    private static Student addUser(final AppDatabase db, final int id, final String name) {
-        Student user = new Student(name,id);
+    private static Student addUser(final AppDatabase db, final int id, final String name,final int num) {
+        Student user = new Student(id,name,num);
 
 
         db.userModel().insertUser(user);
@@ -56,9 +56,9 @@ public class DatabaseInitializer {
         db.userModel().deleteAll();
         //db.bookModel().deleteAll();
 
-        Student user1 = addUser(db, 1, "Jason");
-        Student user2 = addUser(db, 2, "Mike");
-        addUser(db, 3, "Carol");
+        //Student user1 = addUser(db, 1, "Jason",1);
+        //Student user2 = addUser(db, 2, "Mike",2);
+        //addUser(db, 3, "Carol",3);
 /*
         Book book1 = addBook(db, "1", "Dune");
         Book book2 = addBook(db, "2", "1984");

@@ -17,14 +17,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Name" />
+            android:hint="Name" />
 
         <EditText
             android:id="@+id/student_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Roll number" />
+            android:hint="Roll number" />
     </LinearLayout>
 
 
